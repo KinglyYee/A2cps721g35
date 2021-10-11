@@ -1,4 +1,4 @@
-nth(1, [H|_], H) :- !.
+nth(1, [H|_], H).
 nth(I, [_|T], H) :- I > 1, I1 is I - 1, nth(I1, T, H).
 
 remove(_, [], []).
