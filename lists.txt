@@ -1,0 +1,143 @@
+1. [mth110 | [mth210 | [cps305 | [cps721 | CPS822 ]]]] and [P,R,Q | AI]
+
+
+Let
+mth110 = P
+
+Converting out of head | tail notation
+[cps721 | CPS822] = [cps721, CPS822]
+
+cps305 | [cps721, CPS822] can be rewritten as
+Q = cps305
+AI = [cps721, CPS822]
+Therefore, 
+[Q | AI]
+
+Let mth210 = R, extending further we can substitute
+
+[mth210 | Q | AI]
+[R | Q | AI]
+
+Finally,
+Let mth110 = P
+
+[mth110 | R | Q | AI]
+[P | R | Q | AI]
+
+By head tail notation, this is equivalent to 
+[P, R ,Q | AI]
+
+Therefore LHS = RHS
+QED
+
+2. [List | [List, a,b,c]] and [[], Z | U]
+
+Let List = []
+[ List, List, a, b ,c] 
+
+
+
+[]
+
+[ [] | [ [], a,b,c] ]
+
+[ [] , [], a, b, c ]
+
+
+
+  
+3. [U,[W|U],a,b] and [Z | [ [a|[b] | W]]
+
+[Z | [ [a|[b] | W]]
+= [ Z | [a,b] | W ]
+= [ Z | [a,b], W]
+= [ Z, [ [a,b], W] ]
+= [ Z, [ [a,b], W] ]
+
+[U,[W|U],a,b]
+Let Z = U
+[ Z, [W|Z], a, b]
+[ Z, [ W,Z ], a , b]
+
+RHS = 2 elements
+LHS = 3 elements
+
+
+4. [ Var | U ] and [ http, www | [ryerson, ca]]
+[ http, [www, ryerson, ca ]]
+
+Let
+[www, ryerson, ca] = U
+http = Var
+
+[ http | U ]
+[ Var | U] 
+
+Therefore, identical 
+QED
+
+
+
+5.
+[k,p | U] and [k, W, m,n, [W | [c]]]
+
+
+[k, W, m, n, [W | [c]]]
+[ k, W, m ,n, [W,c] ]
+[ k, W, m, n, [W,c] ]
+
+let W = p
+[ k, p, m, n, [p,c] ]
+
+
+let [ m,n,[p,c] ] = U
+
+by head tail notation,
+[k, p | [ m, n, [p,c] ] ]
+[k, p | U]
+
+QED
+
+6. [ U | W] and [W | [[]| U]]
+
+[ W | [] ]
+is equivaent to W 
+
+Therefore,
+[W | [[]| U]]
+= [ W | U]
+
+and that's the same as
+[ U | W]
+
+QED
+
+7.[myself, Q | [ P | U ] ] and [ W | [ [vars | [ P ] ] | [ myself | Q ] ] ]
+
+[ myself, Q | [ P, U ] ]
+[ myself, Q, P, U ]
+
+[ W | [ [vars | [ P ] ] | [ myself | Q ] ] ]
+[ W | [ [ vars, P]] | [ myself, Q]]
+[ W | [ [ vars, P]] | [myself , Q]]
+[ W | [ [ vars, P], myself, Q ] ]
+[ W , [ vars, p ], myself, Q]
+
+let [ vars, p] = P 
+[ W, P, myself, Q]
+
+now we let W = U
+[ U, P, myself, Q]
+which reordered is
+[ myself, Q, P, U]
+
+QED
+
+8.  
+[k, [Q | [l,m]], tree | [book | Z]]  and  [P, U | [R,Q,n]] 
+[k, [Q | [l,m]], tree | [book | Z]]
+[k, [Q, l, m], tree | [book, Z]]
+[k, [Q, l, m], tree, book, Z]
+
+
+[P, U | [R,Q,n]] 
