@@ -1,3 +1,9 @@
+/*
+----------------- CPS 721 Assignment 2 ------------------
+Zhi Long Peng (zpeng) | student #: 500901658 | section 6
+Kingly Ye (k4yee) | student #: 500910530 | section 7
+*/
+
 qs(nil, nil).
 qs(next(H,T), S) :- part(H, T, Left, Right), qs(Left, Ls), qs(Right, Bs), mergeLists(Ls, next(H, Bs), S).
 
