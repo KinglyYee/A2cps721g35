@@ -8,15 +8,19 @@ Part 2.
 
 ?- nth(7, [a, b, c, d, f, h, g], g).
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- nth(3, [h, b, a], a).
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- nth(5, [z, x, y, t, v], v).
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- nth(1, [z], z).
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 
 ?- nth(0, [], x).
@@ -33,13 +37,16 @@ No (0.00s cpu)
 
 ?- remove(z, [z, t, g, y, z], [t, g, y]).
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- remove(h, [h, t, g, s], [t, g, s]).
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- remove([], [[]], T).
 T = []
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- remove(c, [a, c, e, c], [a, c, e]).
 No (0.00s cpu)
@@ -54,17 +61,20 @@ No (0.00s cpu)
 X = [32, 22, 4]
 Y = [29, 41, 23, 5]
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- splitEvenOdd([2, 4, 5, 13, 22, 15, 19], L1, L2).
 L1 = [2, 4, 22]
 L2 = [5, 13, 15, 19]
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 
 ?- splitEvenOdd([3, 2, 1, 43, 12, 18, 19], I, J).
 I = [2, 12, 18]
 J = [3, 1, 43, 19]
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- splitEvenOdd([2, 4, 5, 13, 22, 15, 19], [1, 2], L2).
 No (0.00s cpu)
@@ -74,15 +84,19 @@ No (0.00s cpu)
 
 ?- lessThanEq([d], [[e], [f]], [a, b, c, d]).
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- lessThanEq([], [[], [f]], [a, b, c, d]).
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- lessThanEq([a], [b, c], [a, b, c]).
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- lessThanEq([], [b, e], [a, b, c]).
 Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
 
 ?- lessThanEq([a], [b, d, e], [a, b, c]).
 No (0.00s cpu)
@@ -100,8 +114,4 @@ Yes (0.00s cpu, solution 1, maybe more)
 
 ?- row(9, R).
 R = [1, 8, 28, 56, 70, 56, 28, 8, 1]
-Yes (0.00s cpu, solution 1, maybe more)
-
-?- row(12, R).
-R = [1, 11, 55, 165, 330, 462, 462, 330, 165, 55, 11, 1]
 Yes (0.00s cpu, solution 1, maybe more)
