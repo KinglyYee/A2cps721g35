@@ -1,3 +1,9 @@
+/*
+----------------- CPS 721 Assignment 2 ------------------
+Zhi Long Peng (zpeng) | student #: 500901658 | section 6
+Kingly Ye (k4yee) | student #: 500910530 | section 7
+*/
+
 nth(1, [H|_], H).
 nth(I, [_|T], H) :- I > 1, I1 is I - 1, nth(I1, T, H).
 
