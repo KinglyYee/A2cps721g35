@@ -1,0 +1,49 @@
+Part 2.
+
+Q1
+Working Queries
+?- nth(1, [a], a).
+?- nth(3, [a,b,c] c).
+?- nth(2, [a,b,c,d,e,f],b).
+?- nth(2, [a,b,c,d,e,f,g],b).
+?- nth(7, [a,b,c,d,f,h,g],g).
+?- nth(3, [h,b,a], a).
+?- nth(5, [z,x,y,t,v],v).
+?- nth(1,[z], z).
+
+Failing Queries
+
+?- nth(0, [],x)
+?- nth(1, [a,b,c], b).
+?- nth(4, [p,q,r],z).
+?- nth(2,[p,q,r],p).
+?- nth(1, [z,x,y], y).
+?- nth(3, [z,x,t,y],x).
+
+---------------------------------
+Q2
+Working Queries
+?- remove(a, [c,a,n,a,d,a], [c,n,d]).
+?- remove(a,[], []).
+?- remove(a, [[d,e,f], [a,a]], [[d,e,f], [a,a]]).
+
+?- remove(d,[a,d,c], [a,d,c]).
+?- remove
+
+
+?- remove
+
+Failing Queries
+?- remove(a, [a,b,c,d,a,e], [b,c,d,a,e])/
+?- remove(a, [], [a]).
+?- remove(a, [d,e,f,g,h],[d,e,f]).
+
+?- remove(c,[a,c,e,c],[a,c,e]).
+?- remove(t, [t,a,b], [t,t,a,b]).
+
+
+
+Q3. 
+splitEvenOdd([22,9,11,400,0], X, Y).
+splitEvenOdd([33],[],[33]).
+splitEvenOdd([7,8,8,9,7], L1, L2).
