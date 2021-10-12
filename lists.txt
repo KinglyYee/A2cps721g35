@@ -47,6 +47,7 @@ Explanation:
 
 2. [List | [List, a,b,c]] and [[], Z | U]
 
+The variables that make these statements true. 
 Let 
     List = []
     Z = []
@@ -66,99 +67,153 @@ Explanation:
     QED
 
 
-3. [U,[W|U],a,b] and [Z | [ [a|[b] | W]]
+3. [U,[W|U],a,b] and [Z | [ [a|[b] ] | W]] 
 
 Explanation: 
-    [Z | [ [a|[b] | W]]
-    = [ Z | [a,b] | W ]
-    = [ Z | [a,b], W]
-    = [ Z, [ [a,b], W] ]
-    = [ Z, [ [a,b], W] ]
+    RHS:
+        [Z | [ [a|[b]] | W]]
+        = [ Z | [a,b] | W ]
+        = [ Z | [a,b], W]
+        = [ Z, [a,b], W] ]
 
-    [U,[W|U],a,b]
-    Let Z = U
-    [ Z, [W|Z], a, b]
-    [ Z, [ W,Z ], a , b]
+        This has 3 elements
 
-    RHS = 2 elements
+    LHS:
+        [U,[W|U],a,b]
+        [U, [W,U], a, b]
+
+        This has 4/+ elements
+
+    Since there are inequal amount of elements, these two lists do not unify
     LHS = 3 elements
+    RHS = 4+ elements
 
+    QED
 
 4. [ Var | U ] and [ http, www | [ryerson, ca]]
-[ http, [www, ryerson, ca ]]
 
+The variables that make these statements true. 
 Let
-[www, ryerson, ca] = U
-http = Var
+    U = [www, ryerson, ca]
+    Var = http
 
-[ http | U ]
-[ Var | U] 
+Explanation
+    LHS:
+        Sub http with Var
+        [ http | U ]
+        [ Var | U] 
 
-Therefore, identical 
-QED
+    RHS:
+        Converting to regular set notation instead of head | tail notation
+        [ http, www | [ryerson, ca]]
+        [ http, [www,ryerson,ca]]
+        [ http, U]
+        [ Var | U]
 
-
-
-5.
-[k,p | U] and [k, W, m,n, [W | [c]]]
-
-
-[k, W, m, n, [W | [c]]]
-[ k, W, m ,n, [W,c] ]
-[ k, W, m, n, [W,c] ]
-
-let W = p
-[ k, p, m, n, [p,c] ]
+    Therefore, LHS = RHS
+    QED
 
 
-let [ m,n,[p,c] ] = U
+5. [k,p | U] and [k, W, m,n, [W | [c]]]
 
-by head tail notation,
-[k, p | [ m, n, [p,c] ] ]
-[k, p | U]
+The variables that make these statements true. 
+    Let
+        W = p 
+        [ m,n, [p,c]]
 
-QED
+    Explanation:
+        RHS:
+            [k, W, m, n, [W | [c]]]
+            [ k, W, m ,n, [W,c] ]
+            [ k, W, m, n, [W,c] ]
+
+            let W = p
+            [ k, p, m, n, [p,c] ]
+
+            let [ m,n,[p,c] ] = U
+
+            by head tail notation,
+            [k, p | [ m, n, [p,c] ] ]
+            [k, p | U]
+        LHS = [k, p | U]
+
+        Therefore, LHS = RHS
+        QED
 
 6. [ U | W] and [W | [[]| U]]
 
-[ W | [] ]
-is equivaent to W 
 
-Therefore,
-[W | [[]| U]]
-= [ W | U]
+    Explanation
+        RHS: 
+            [W | [[]| U]]
+            [ W | [], U ]
+            
+            
+        LHS:
+            [ U | W]
 
-and that's the same as
-[ U | W]
+        Upon observation, there are unequal amounts of elements. Considering this, no variables will
+        make these two lists identical, a
 
-QED
+        QED
 
 7.[myself, Q | [ P | U ] ] and [ W | [ [vars | [ P ] ] | [ myself | Q ] ] ]
 
-[ myself, Q | [ P, U ] ]
-[ myself, Q, P, U ]
+The variables that make these statements true. 
+    Let 
+        [ vars, p] = P 
+        W = U
 
-[ W | [ [vars | [ P ] ] | [ myself | Q ] ] ]
-[ W | [ [ vars, P]] | [ myself, Q]]
-[ W | [ [ vars, P]] | [myself , Q]]
-[ W | [ [ vars, P], myself, Q ] ]
-[ W , [ vars, p ], myself, Q]
+    Explanation:
+        LHS:
+            Converting from head|tail notation to regular set notation for clarity
+            [ myself, Q | [ P, U ] ]
+            [ myself, Q, P, U ]
+            [ W | [ [vars | [ P ] ] | [ myself | Q ] ] ]
+            [ W | [ [ vars, P]] | [ myself, Q]]
+            [ W | [ [ vars, P]] | [myself , Q]]
+            [ W | [ [ vars, P], myself, Q ] ]
+            [ W , [ vars, p ], myself, Q]
 
-let [ vars, p] = P 
-[ W, P, myself, Q]
+            
+            let [ vars, p] = P 
+            [ W, P, myself, Q]
 
-now we let W = U
-[ U, P, myself, Q]
-which reordered is
-[ myself, Q, P, U]
+            now we let W = U
+            [ U, P, myself, Q]
+            which reordered is
+            [ myself, Q, P, U]
+        RHS:
+            [myself, Q | [P, U]]
+            [myself, Q, P, U]
 
-QED
+        Therefore, LHS = RHS
+        QED
 
-8.  
-[k, [Q | [l,m]], tree | [book | Z]]  and  [P, U | [R,Q,n]] 
-[k, [Q | [l,m]], tree | [book | Z]]
-[k, [Q, l, m], tree | [book, Z]]
-[k, [Q, l, m], tree, book, Z]
+8.  [k, [Q | [l,m]], tree | [book | Z]] and [P, U | [R, Q, n]]
 
+The variables that make these statements true. 
+    Let
+        P = k 
+        U = [Q, l, m] where Q = book as well
+        R = tree 
+        Q = book 
+        Z = n
 
-[P, U | [R,Q,n]] 
+    Explanation:
+        LHS:
+            [k, [Q | [l,m]], tree | [book | Z]]  and  [P, U | [R,Q,n]] 
+            [k, [Q | [l,m]], tree | [book | Z]]
+            [k, [Q, l, m], tree | [book, Z]]
+        RHS:
+            Taking out one element fron head tail notation
+            [P, U | [R,Q,n]]
+            [P, U, R | [Q,n]]
+
+            Substituting the variables mentioned earlier
+            [P, U, R | [Q,n]]
+            becomes
+            [k, [Q,l,m], tree | [book, z]]
+
+        Therefore, LHS = RHS
+        QED
