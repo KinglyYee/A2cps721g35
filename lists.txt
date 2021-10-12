@@ -4,67 +4,84 @@ Kingly Ye (k4yee) | student #: 500910530 | section 7
 
 1. [mth110 | [mth210 | [cps305 | [cps721 | CPS822 ]]]] and [P,R,Q | AI]
 
-
+The variables that make these statements true. 
 Let
-mth110 = P
+    P = mth110
+    R = mth210
+    Q = cps306
+    AI = [cps721, CPS822]
 
-Converting out of head | tail notation
-[cps721 | CPS822] = [cps721, CPS822]
+Explanation: 
+    Left hand side (LHS)
+    Converting out of head | tail notation to regular set notation
 
-cps305 | [cps721, CPS822] can be rewritten as
-Q = cps305
-AI = [cps721, CPS822]
-Therefore, 
-[Q | AI]
+        [cps721 | CPS822] = [cps721, CPS822]
 
-Let mth210 = R, extending further we can substitute
+    Expanding futher, we now rewrite the following from head | tail to regular set notation and start substitution
+    cps305 | [cps721, CPS822] 
 
-[mth210 | Q | AI]
-[R | Q | AI]
+    Shown earlier, we use 
+    Q = cps305
+    AI = [cps721, CPS822]
 
-Finally,
-Let mth110 = P
+    Therefore
+    cps305 | [cps721, CPS822] is rewritten as
+    [Q | AI]
 
-[mth110 | R | Q | AI]
-[P | R | Q | AI]
+    mth210 = R, extending further we can substitute
 
-By head tail notation, this is equivalent to 
-[P, R ,Q | AI]
+    [mth210 | Q | AI]
+    [R | Q | AI]
 
-Therefore LHS = RHS
-QED
+    Finally,
+    Let mth110 = P
+
+    [mth110 | R | Q | AI]
+    [P | R | Q | AI]
+
+    By head tail notation, this is equivalent to 
+    [P, R ,Q | AI]
+
+    Therefore LHS = RHS if we use the variables mentioned earlier.
+    QED
 
 2. [List | [List, a,b,c]] and [[], Z | U]
 
-Let List = []
-[ List, List, a, b ,c] 
+Let 
+    List = []
+    Z = []
+    U = [a,b,c]
+
+Explanation:
+    Substituting List = [], Z = []
+    
+    LHS
+    [ [] | [ [], a, b, c]]
+    [ [], [] | U ]
+
+    RHS
+    [ [], [] | U ]
+
+    Therefore LHS = RHS if we use the variables mentioned earlier.
+    QED
 
 
-
-[]
-
-[ [] | [ [], a,b,c] ]
-
-[ [] , [], a, b, c ]
-
-
-
-  
 3. [U,[W|U],a,b] and [Z | [ [a|[b] | W]]
 
-[Z | [ [a|[b] | W]]
-= [ Z | [a,b] | W ]
-= [ Z | [a,b], W]
-= [ Z, [ [a,b], W] ]
-= [ Z, [ [a,b], W] ]
+Explanation: 
+    [Z | [ [a|[b] | W]]
+    = [ Z | [a,b] | W ]
+    = [ Z | [a,b], W]
+    = [ Z, [ [a,b], W] ]
+    = [ Z, [ [a,b], W] ]
 
-[U,[W|U],a,b]
-Let Z = U
-[ Z, [W|Z], a, b]
-[ Z, [ W,Z ], a , b]
+    [U,[W|U],a,b]
+    Let Z = U
+    [ Z, [W|Z], a, b]
+    [ Z, [ W,Z ], a , b]
 
-RHS = 2 elements
-LHS = 3 elements
+    RHS = 2 elements
+    LHS = 3 elements
 
 
 4. [ Var | U ] and [ http, www | [ryerson, ca]]
