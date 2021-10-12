@@ -24,6 +24,18 @@ a)
 
 b)
 
-    ?- subsFirst(2, 15, tree(2, void, 2, void), X).
-    X = tree(15, void, 2, void)
+    ?- subsFirst(18, 25, tree(18, void, void, void), T).
+    T = tree(25, void, void, void)
     Yes (0.00s cpu, solution 1, maybe more)
+
+    ?- subsFirst(2, void, tree(2, void, void, void), X).
+    X = tree(void, void, void, void)
+    Yes (0.00s cpu, solution 1, maybe more)
+
+    ?- subsFirst(2, 38, tree(26, void, tree(2, 32, void, void), void), tree(26, void, tree(38, 32, void, void), void)).
+    Yes (0.00s cpu, solution 1, maybe more)
+
+    ?- subsFirst(21, 38, tree(26, void, tree(21, 32, void, void), void), tree(26, void, tree(38, 32, void, void), X)).
+    X = void
+    Yes (0.00s cpu, solution 1, maybe more)
+
