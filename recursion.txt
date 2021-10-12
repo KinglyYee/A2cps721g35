@@ -4,51 +4,104 @@ Kingly Ye (k4yee) | student #: 500910530 | section 7
 
 Part 2.
 
-Q1
-Working Queries
-?- nth(1, [a], a).
-?- nth(3, [a,b,c] c).
-?- nth(2, [a,b,c,d,e,f],b).
-?- nth(2, [a,b,c,d,e,f,g],b).
-?- nth(7, [a,b,c,d,f,h,g],g).
-?- nth(3, [h,b,a], a).
-?- nth(5, [z,x,y,t,v],v).
-?- nth(1,[z], z).
+1)
 
-Failing Queries
+?- nth(7, [a, b, c, d, f, h, g], g).
+Yes (0.00s cpu, solution 1, maybe more)
 
-?- nth(0, [],x)
-?- nth(1, [a,b,c], b).
-?- nth(4, [p,q,r],z).
-?- nth(2,[p,q,r],p).
-?- nth(1, [z,x,y], y).
-?- nth(3, [z,x,t,y],x).
+?- nth(3, [h, b, a], a).
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- nth(5, [z, x, y, t, v], v).
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- nth(1, [z], z).
+Yes (0.00s cpu, solution 1, maybe more)
+
+
+?- nth(0, [], x).
+No (0.00s cpu)
+
+?- nth(1, [a, b, c], b).
+No (0.00s cpu)
+
+?- nth(1, [a, b, c], b).
+No (0.00s cpu)
 
 ---------------------------------
-Q2
-Working Queries
-?- remove(a, [c,a,n,a,d,a], [c,n,d]).
-?- remove(a,[], []).
-?- remove(a, [[d,e,f], [a,a]], [[d,e,f], [a,a]]).
+2)
 
-?- remove(d,[a,d,c], [a,d,c]).
-?- remove
+?- remove(z, [z, t, g, y, z], [t, g, y]).
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- remove(h, [h, t, g, s], [t, g, s]).
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- remove([], [[]], T).
+T = []
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- remove(c, [a, c, e, c], [a, c, e]).
+No (0.00s cpu)
+
+?- remove(a, [a, b, c, d, a, e], [b, c, d, a, e]).
+No (0.00s cpu)
+
+---------------------------------
+3) 
+
+?- splitEvenOdd([29, 32, 41, 23, 22, 4, 5], X, Y).
+X = [32, 22, 4]
+Y = [29, 41, 23, 5]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- splitEvenOdd([2, 4, 5, 13, 22, 15, 19], L1, L2).
+L1 = [2, 4, 22]
+L2 = [5, 13, 15, 19]
+Yes (0.00s cpu, solution 1, maybe more)
 
 
-?- remove
+?- splitEvenOdd([3, 2, 1, 43, 12, 18, 19], I, J).
+I = [2, 12, 18]
+J = [3, 1, 43, 19]
+Yes (0.00s cpu, solution 1, maybe more)
 
-Failing Queries
-?- remove(a, [a,b,c,d,a,e], [b,c,d,a,e])/
-?- remove(a, [], [a]).
-?- remove(a, [d,e,f,g,h],[d,e,f]).
+?- splitEvenOdd([2, 4, 5, 13, 22, 15, 19], [1, 2], L2).
+No (0.00s cpu)
 
-?- remove(c,[a,c,e,c],[a,c,e]).
-?- remove(t, [t,a,b], [t,t,a,b]).
+---------------------------------
+4.
+
+?- lessThanEq([d], [[e], [f]], [a, b, c, d]).
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- lessThanEq([], [[], [f]], [a, b, c, d]).
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- lessThanEq([a], [b, c], [a, b, c]).
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- lessThanEq([], [b, e], [a, b, c]).
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- lessThanEq([a], [b, d, e], [a, b, c]).
+No (0.00s cpu)
 
 
+5.
 
-Q3. 
-splitEvenOdd([22,9,11,400,0], X, Y).
-splitEvenOdd([33],[],[33]).
-splitEvenOdd([7,8,8,9,7], L1, L2).
+?- row(12, R).
+R = [1, 11, 55, 165, 330, 462, 462, 330, 165, 55, 11, 1]
+Yes (0.00s cpu, solution 1, maybe more)
 
+?- row(2, R).
+R = [1, 1]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- row(9, R).
+R = [1, 8, 28, 56, 70, 56, 28, 8, 1]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- row(12, R).
+R = [1, 11, 55, 165, 330, 462, 462, 330, 165, 55, 11, 1]
+Yes (0.00s cpu, solution 1, maybe more)
