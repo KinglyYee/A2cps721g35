@@ -181,8 +181,6 @@ The variables that make these statements true.
 
             now we let W = U
             [ U, P, myself, Q]
-            which reordered is
-            [ myself, Q, P, U]
         RHS:
             [myself, Q | [P, U]]
             [myself, Q, P, U]
