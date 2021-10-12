@@ -1,3 +1,41 @@
 ----------------- CPS 721 Assignment 2 ------------------
 Zhi Long Peng (zpeng) | student #: 500901658 | section 6
 Kingly Ye (k4yee) | student #: 500910530 | section 7
+
+Part 3
+
+a)
+
+    ?- qs(next(2, next(3, next(8, next(2, nil)))), X).
+    X = next(2, next(2, next(3, next(8, nil))))
+    Yes (0.00s cpu, solution 1, maybe more)
+
+    ?- qs(next(1, next(2, next(19, next(2, nil)))), X).
+    X = next(1, next(2, next(2, next(19, nil))))
+    Yes (0.00s cpu, solution 1, maybe more)
+
+    ?- qs(next(1, next(2, next(19, next(2, next(12, next(9, nil)))))), X).
+    X = next(1, next(2, next(2, next(9, next(12, next(19, nil))))))
+    Yes (0.00s cpu, solution 1, maybe more)
+
+    ?- qs(next(1, next(2, next(19, next(2, next(12, next(9, next(41, next(23, next(92, next(101, nil)))))))))), X).
+    X = next(1, next(2, next(2, next(9, next(12, next(19, next(23, next(41, next(92, next(101, nil))))))))))
+    Yes (0.00s cpu, solution 1, maybe more)
+
+b)
+
+    ?- subsFirst(18, 25, tree(18, void, void, void), T).
+    T = tree(25, void, void, void)
+    Yes (0.00s cpu, solution 1, maybe more)
+
+    ?- subsFirst(2, void, tree(2, void, void, void), X).
+    X = tree(void, void, void, void)
+    Yes (0.00s cpu, solution 1, maybe more)
+
+    ?- subsFirst(2, 38, tree(26, void, tree(2, 32, void, void), void), tree(26, void, tree(38, 32, void, void), void)).
+    Yes (0.00s cpu, solution 1, maybe more)
+
+    ?- subsFirst(21, 38, tree(26, void, tree(21, 32, void, void), void), tree(26, void, tree(38, 32, void, void), X)).
+    X = void
+    Yes (0.00s cpu, solution 1, maybe more)
+

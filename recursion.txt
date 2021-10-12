@@ -87,7 +87,7 @@ Yes (0.00s cpu, solution 1, maybe more)
 ?- lessThanEq([a], [b, d, e], [a, b, c]).
 No (0.00s cpu)
 
-
+---------------------------------
 5.
 
 ?- row(12, R).
